@@ -1,0 +1,23 @@
+.div-metas > h1{
+    font-size: 120px;
+    line-height: 1.2;
+    letter-spacing: 20px;
+    color: #02b4a4;
+}
+
+.add-meta{
+    background-color: #B8E8E4;
+    border-radius: 30px;
+    padding: 1%;
+    line-height: 1;
+}
+
+.add-meta h2{
+    color: #0E7E75;
+    font-size: 72px;
+    line-height: 1;
+}
+
+.add-meta div{
+    padding: 0% 16%;
+}

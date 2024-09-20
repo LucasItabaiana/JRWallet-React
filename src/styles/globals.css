@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './cadastroelogin.css';
+@import './metas.css';
+@import './home.css';
+@import './topo.css';
+@import './perfil.css';
+
+
+
+body {
+  color: white;
+  background-color:#02b4a4;
+}
+
+.koulen-regular {
+  font-family: "Koulen", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.goldman-regular {
+  font-family: "Goldman", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.goldman-bold {
+  font-family: "Goldman", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.div-container{
+  padding: 20px 15px;
+  text-align: center;
+  border-radius: 30px;
+  box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.2);
+}

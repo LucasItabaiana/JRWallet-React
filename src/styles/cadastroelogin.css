@@ -1,0 +1,69 @@
+.h1{
+    font-size: 110px;
+    line-height: 1;
+    letter-spacing: 20px;
+    position: absolute;
+    top: 26%;
+    color: #DBFFFC;
+  }
+  
+  .form{
+    background-color: #2C334B;
+    width: 35%; height: auto;
+    justify-content: center;
+    border-radius: 32px;
+    padding: 60px 0px;
+    margin: 30px 0px 40px 0px;
+    box-shadow: 7px 7px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  .form2{
+    background-color: #2C334B;
+    width: 98%; height: 525px;
+    justify-content: center;
+    border-radius: 32px;
+    padding-top: 30px;
+    margin: 30px 0px 40px 0px;
+    box-shadow: 7px 7px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  .formsp{
+    font-size: 45px;
+    color: white;
+    line-height: 1.1;
+    text-align: center;
+  }
+
+ .btnInicio{
+   margin-bottom: 1em;
+ }
+  
+  .inputsCadELog{
+    width: 80%;
+    height: 40px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    color: black;
+    padding: 7px;
+    outline: none;
+  }
+
+  .formErro{
+    font-size: 1.4em;
+    text-align: center;
+    background-color: #4b2c2c;
+    padding: 5px 15px;
+    letter-spacing: 2px;
+    border-radius: 100px;
+    color: rgb(255, 56, 56);
+  }
+
+  .formSucesso{
+    font-size: 1.4em;
+    text-align: center;
+    background-color: #364b2c;
+    padding: 5px 15px;
+    letter-spacing: 2px;
+    border-radius: 100px;
+    color: rgb(112, 255, 56);
+  }
