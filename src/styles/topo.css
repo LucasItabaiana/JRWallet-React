@@ -11,12 +11,11 @@
     border-radius: 29px;
 }
 
-.svgs{
+.divTopo .svgs{
     height: 70px; width: 70px;
-    fill: #02b4a4;
-    transition: .2s;
+    transition: fill .2s;
 }
 
-.svgs:hover{
+.divTopo .svgs:hover{
     fill: #175651;
 }

@@ -1,4 +1,4 @@
-// File: D:\Downloads\02attjr\02attjr\src\app\Login\page.tsx
+// File: C:\Users\Samsung\JRWallet-React\src\app\Login\page.tsx
 import * as entry from '../../../../src/app/Login/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
