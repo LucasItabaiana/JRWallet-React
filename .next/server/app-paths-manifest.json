@@ -1,7 +1,8 @@
 {
-  "/page": "app/page.js",
-  "/Cadastro/page": "app/Cadastro/page.js",
+  "/Tarefas/page": "app/Tarefas/page.js",
+  "/Carteira/page": "app/Carteira/page.js",
+  "/Perfil/page": "app/Perfil/page.js",
   "/Login/page": "app/Login/page.js",
-  "/Metas/page": "app/Metas/page.js",
-  "/Perfil/page": "app/Perfil/page.js"
+  "/Cadastro/page": "app/Cadastro/page.js",
+  "/Metas/page": "app/Metas/page.js"
 }

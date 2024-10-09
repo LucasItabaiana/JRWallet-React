@@ -1,9 +1,10 @@
-'use client';
+'use client'; 
 
 import { auth, db } from '../../firebase/authentication'; 
 import Link from "next/link";
 import Image from 'next/image';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation'; 
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { setDoc, doc } from 'firebase/firestore';
 import BotaoInicio from "@/components/Botoes/botaoInicio";
@@ -18,6 +19,7 @@ export default function Cadastro() {
   const [estado, setEstado] = useState('');
   const [mensagemSucesso, setMensagemSucesso] = useState('');
   const [mensagemErro, setMensagemErro] = useState('');
+  const router = useRouter(); 
 
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -39,6 +41,8 @@ export default function Cadastro() {
 
       setMensagemSucesso('Usuário cadastrado com sucesso! Aguarde...');
       setMensagemErro('');
+
+      router.push('/Login');
     } catch (error) {
       if (error instanceof Error) {
         console.error('Erro ao cadastrar:', error.message);

@@ -1,0 +1,88 @@
+
+.checkbox { 
+    display: none;
+    position: absolute;
+    opacity: 0;
+} 
+
+.checkboxLabel { 
+    display: inline-block; 
+    width: 60px; 
+    height: 60px; 
+    background-color: #B8E8E4; 
+    border-radius: 50%; /* Deixa o checkbox arredondado */ 
+    border: 6px solid white; 
+    cursor: pointer; 
+    position: relative; 
+} 
+
+/* Alterar a cor quando o checkbox estiver marcado */ 
+.checkbox:checked + label { 
+    background-color: #4CAF50; 
+    border-color: #4CAF50; 
+    border: 6px solid white;
+} 
+
+.div-task > h1{
+    font-size: 120px;
+    line-height: 0.5;
+    letter-spacing: 20px;
+    color: #02b4a4;
+    margin-bottom: 4%;
+}
+
+.add-tarefas{
+    background-color: #B8E8E4;
+    border-radius: 30px;
+    padding: 1%;
+    line-height: 1;
+}
+
+.add-tarefas h2{
+    color: #0E7E75;
+    font-size: 62px;
+    line-height: 1;
+}
+
+.add-tarefas div{
+    padding: 0% 16%;
+}
+
+.add-button{
+    position: relative;
+    left: 95.5%;
+    background-color: #B8E8E4;
+    color: #01625b;
+    font-size: 65px;
+    line-height: .9;
+    width: 50px; height: 50px;
+    border-radius: 60px;
+    cursor: pointer;
+}
+
+.add-button:hover{
+    background-color: #01625b;
+    color: #B8E8E4;
+    transition: .2s;
+}
+
+
+
+
+.add-tarefas-drop{
+    position: absolute;
+    padding: 0;
+    top: 18vh;
+    left: 127vh;
+    opacity: 0;
+    z-index: -99;
+    visibility: hidden;
+    transition: .5s;
+    box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.1);
+}
+
+.add-tarefa-div:hover .add-tarefas-drop{
+    opacity: 1;
+    visibility: visible;
+    z-index: 99;
+}

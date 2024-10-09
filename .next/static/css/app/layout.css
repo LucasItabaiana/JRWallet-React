@@ -267,13 +267,12 @@
     border-radius: 29px;
 }
 
-.svgs{
+.divTopo .svgs{
     height: 70px; width: 70px;
-    fill: #02b4a4;
-    transition: .2s;
+    transition: fill .2s;
 }
 
-.svgs:hover{
+.divTopo .svgs:hover{
     fill: #175651;
 }
 /*!*******************************************************************************************************************************************************************************************************************************************************************!*\
@@ -292,6 +291,132 @@
 .info-profile p{
     font-size: 2.5em;
     letter-spacing: 3px;
+}
+/*!********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./src/styles/tarefas.css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************/
+
+.checkbox { 
+    display: none;
+    position: absolute;
+    opacity: 0;
+} 
+
+.checkboxLabel { 
+    display: inline-block; 
+    width: 60px; 
+    height: 60px; 
+    background-color: #B8E8E4; 
+    border-radius: 50%; /* Deixa o checkbox arredondado */ 
+    border: 6px solid white; 
+    cursor: pointer; 
+    position: relative; 
+} 
+
+/* Alterar a cor quando o checkbox estiver marcado */ 
+.checkbox:checked + label { 
+    background-color: #4CAF50; 
+    border-color: #4CAF50; 
+    border: 6px solid white;
+} 
+
+.div-task > h1{
+    font-size: 120px;
+    line-height: 0.5;
+    letter-spacing: 20px;
+    color: #02b4a4;
+    margin-bottom: 4%;
+}
+
+.add-tarefas{
+    background-color: #B8E8E4;
+    border-radius: 30px;
+    padding: 1%;
+    line-height: 1;
+}
+
+.add-tarefas h2{
+    color: #0E7E75;
+    font-size: 62px;
+    line-height: 1;
+}
+
+.add-tarefas div{
+    padding: 0% 16%;
+}
+
+.add-button{
+    position: relative;
+    left: 95.5%;
+    background-color: #B8E8E4;
+    color: #01625b;
+    font-size: 65px;
+    line-height: .9;
+    width: 50px; height: 50px;
+    border-radius: 60px;
+    cursor: pointer;
+}
+
+.add-button:hover{
+    background-color: #01625b;
+    color: #B8E8E4;
+    transition: .2s;
+}
+
+
+
+
+.add-tarefas-drop{
+    position: absolute;
+    padding: 0;
+    top: 18vh;
+    left: 127vh;
+    opacity: 0;
+    z-index: -99;
+    visibility: hidden;
+    transition: .5s;
+    box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.1);
+}
+
+.add-tarefa-div:hover .add-tarefas-drop{
+    opacity: 1;
+    visibility: visible;
+    z-index: 99;
+}
+/*!*********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./src/styles/carteira.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************/
+.tarefas-input input{
+    height: 60px; width: 50%;
+    padding: 0px 10px;
+    background-color: #DBFFFC;
+    border-radius: 30px;
+    letter-spacing: 5px;
+    text-align: center;
+    font-size: 2em;
+    color: #175651;
+    outline: none;
+    border: none;
+}
+
+.tarefas-input input::placeholder{
+    color: #A0F7EF;
+}
+
+.tarefas-input p{
+    background-color: #9ACFCB;
+    color: #02b4a4;
+    font-size: 8em;
+    line-height: 1;
+    border-radius: 100px;
+    margin: 0px 25px;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.tarefas-input p:hover{
+    color: #9ACFCB;
+    background-color: #02b4a4;
 }
 /*!********************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./src/styles/globals.css ***!
@@ -865,29 +990,41 @@ video {
 .mr-\[6px\] {
   margin-right: 6px;
 }
+.mt-1 {
+  margin-top: 0.25rem;
+}
+.mt-10 {
+  margin-top: 2.5rem;
+}
 .mt-2 {
   margin-top: 0.5rem;
 }
 .mt-20 {
   margin-top: 5rem;
 }
-.mt-5 {
-  margin-top: 1.25rem;
-}
-.mt-10 {
-  margin-top: 2.5rem;
-}
 .mt-4 {
   margin-top: 1rem;
 }
+.mt-5 {
+  margin-top: 1.25rem;
+}
+.mt-6 {
+  margin-top: 1.5rem;
+}
 .flex {
   display: flex;
+}
+.h-10 {
+  height: 2.5rem;
 }
 .h-8 {
   height: 2rem;
 }
 .h-\[10px\] {
   height: 10px;
+}
+.h-\[600px\] {
+  height: 600px;
 }
 .min-h-screen {
   min-height: 100vh;
@@ -909,6 +1046,9 @@ video {
 }
 .w-\[290px\] {
   width: 290px;
+}
+.w-\[30\%\] {
+  width: 30%;
 }
 .w-\[80\%\] {
   width: 80%;
@@ -996,6 +1136,10 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(55 65 81 / var(--tw-border-opacity));
 }
+.bg-\[\#02b402\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(2 180 2 / var(--tw-bg-opacity));
+}
 .bg-\[\#02b47f\] {
   --tw-bg-opacity: 1;
   background-color: rgb(2 180 127 / var(--tw-bg-opacity));
@@ -1020,6 +1164,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(210 237 235 / var(--tw-bg-opacity));
 }
+.bg-\[\#D4F8F5\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(212 248 245 / var(--tw-bg-opacity));
+}
 .bg-\[\#b40202\] {
   --tw-bg-opacity: 1;
   background-color: rgb(180 2 2 / var(--tw-bg-opacity));
@@ -1036,17 +1184,13 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
-.bg-zinc-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(228 228 231 / var(--tw-bg-opacity));
-}
 .bg-red-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(239 68 68 / var(--tw-bg-opacity));
 }
-.bg-red-600 {
+.bg-zinc-200 {
   --tw-bg-opacity: 1;
-  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
+  background-color: rgb(228 228 231 / var(--tw-bg-opacity));
 }
 .fill-gray-800 {
   fill: #1f2937;
@@ -1070,6 +1214,10 @@ video {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
 }
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -1078,9 +1226,21 @@ video {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
 .px-\[17\%\] {
   padding-left: 17%;
   padding-right: 17%;
+}
+.px-\[40px\] {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.px-\[45px\] {
+  padding-left: 45px;
+  padding-right: 45px;
 }
 .py-1 {
   padding-top: 0.25rem;
@@ -1094,10 +1254,6 @@ video {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
 .pl-8 {
   padding-left: 2rem;
 }
@@ -1106,6 +1262,12 @@ video {
 }
 .pr-8 {
   padding-right: 2rem;
+}
+.pt-1 {
+  padding-top: 0.25rem;
+}
+.pt-3 {
+  padding-top: 0.75rem;
 }
 .text-center {
   text-align: center;
@@ -1121,6 +1283,9 @@ video {
 .text-\[\.9em\] {
   font-size: .9em;
 }
+.text-\[110px\] {
+  font-size: 110px;
+}
 .text-\[25px\] {
   font-size: 25px;
 }
@@ -1132,6 +1297,9 @@ video {
 }
 .leading-none {
   line-height: 1;
+}
+.tracking-\[45px\] {
+  letter-spacing: 45px;
 }
 .tracking-wider {
   letter-spacing: 0.05em;
@@ -1175,6 +1343,10 @@ video {
   --tw-text-opacity: 1;
   color: rgb(177 180 2 / var(--tw-text-opacity));
 }
+.text-\[\#b2b2b2\] {
+  --tw-text-opacity: 1;
+  color: rgb(178 178 178 / var(--tw-text-opacity));
+}
 .text-gray-50 {
   --tw-text-opacity: 1;
   color: rgb(249 250 251 / var(--tw-text-opacity));
@@ -1183,13 +1355,16 @@ video {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
 }
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
 .text-zinc-600 {
   --tw-text-opacity: 1;
   color: rgb(82 82 91 / var(--tw-text-opacity));
 }
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+.line-through {
+  text-decoration-line: line-through;
 }
 .placeholder-\[\#A0F7EF\]::placeholder {
   --tw-placeholder-opacity: 1;
@@ -1380,11 +1555,6 @@ body {
 .hover\:bg-red-600:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(220 38 38 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-red-800:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(153 27 27 / var(--tw-bg-opacity));
 }
 
 .hover\:text-\[\#02b47f\]:hover {

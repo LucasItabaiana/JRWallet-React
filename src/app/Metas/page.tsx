@@ -84,6 +84,7 @@ interface Meta {
                 placeholder="DESCREVA A META"
                 onChange={(e) => setDescricao(e.target.value)}
                 className="placeholder-[#A0F7EF] text-[25px] w-60 p-3 tracking-wider border-none rounded-[29px] focus:outline-none focus:ring-2 focus:ring-blue-500 text-[#02b4a4]"
+                required
               />
               <input
                 type="text"
@@ -91,6 +92,7 @@ interface Meta {
                 placeholder="DIGITE O VALOR"
                 onChange={(e) => setValor(e.target.value)}
                 className="placeholder-[#A0F7EF] text-[25px] w-52 tracking-wider border-none rounded-[29px] p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-[#02b4a4]"
+                required
               />
               <select
                 value={dificuldade}
@@ -129,6 +131,7 @@ interface Meta {
                   placeholder="DESCREVA A META"
                   onChange={(e) => setNovaDescricao(e.target.value)}
                   className="placeholder-[#e7f7a0] text-[25px] w-60 p-3 tracking-wider border-none rounded-[29px] text-[#b1b402] focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                  required
                 />
                 <input
                   type="text"
@@ -136,6 +139,7 @@ interface Meta {
                   placeholder="DIGITE O VALOR"
                   onChange={(e) => setNovoValor(e.target.value)}
                   className="placeholder-[#e7f7a0] text-[25px] w-52 p-3 tracking-wider border-none rounded-[29px] text-[#b1b402] focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                  required
                 />
                 <select
                   value={novaDificuldade}

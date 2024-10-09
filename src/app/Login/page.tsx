@@ -24,7 +24,7 @@ export default function Login() {
       setMensagemSucesso('Login realizado com sucesso! Aguarde...');
       setMensagemErro('');
   
-      router.push('/Metas');
+      router.push('/Perfil');
     } catch (error) {
       console.error('Erro ao fazer login:', error);
       setMensagemErro('Erro ao fazer login. Verifique suas credenciais.');

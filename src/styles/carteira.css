@@ -1,0 +1,32 @@
+.tarefas-input input{
+    height: 60px; width: 50%;
+    padding: 0px 10px;
+    background-color: #DBFFFC;
+    border-radius: 30px;
+    letter-spacing: 5px;
+    text-align: center;
+    font-size: 2em;
+    color: #175651;
+    outline: none;
+    border: none;
+}
+
+.tarefas-input input::placeholder{
+    color: #A0F7EF;
+}
+
+.tarefas-input p{
+    background-color: #9ACFCB;
+    color: #02b4a4;
+    font-size: 8em;
+    line-height: 1;
+    border-radius: 100px;
+    margin: 0px 25px;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.tarefas-input p:hover{
+    color: #9ACFCB;
+    background-color: #02b4a4;
+}
