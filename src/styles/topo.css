@@ -1,21 +1,3 @@
 .divTopo{
-    position: fixed;
-    top: 84%;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    height: 115px; width: 99%;
-    background-color: #d2edeb;
     box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.2);
-    border-radius: 29px;
-}
-
-.divTopo .svgs{
-    height: 70px; width: 70px;
-    transition: fill .2s;
-}
-
-.divTopo .svgs:hover{
-    fill: #175651;
 }

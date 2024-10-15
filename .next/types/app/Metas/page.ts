@@ -1,4 +1,4 @@
-// File: C:\Users\Kaisao\Videos\JRWallet-React-Sprint-9\src\app\Metas\page.tsx
+// File: C:\Users\Kaisao\Videos\JRWallet\JRWallet-React\src\app\Metas\page.tsx
 import * as entry from '../../../../src/app/Metas/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

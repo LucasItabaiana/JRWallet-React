@@ -69,43 +69,49 @@ interface Meta {
       <div className="bebas-neue-regular min-h-screen flex justify-center items-center bg-[#9ACFCB]">
         <Topo />
   
-        <div className="div-metas div-container container mx-auto bg-[#D2EDEB] mt-20 mb-52">
-          <h1>METAS</h1>
+        <div className="div-container container mx-auto bg-[#D2EDEB] mt-20 mb-52">
+          <h1 className='text-[120px] leading-[1.2] tracking-[20px] text-[#02b4a4]'>METAS</h1>
   
-          <div className="add-meta mb-6 shadow-sm">
-            <h2>Adicionar Meta</h2>
-            <div className="flex flex-col flex-wrap sm:flex-row gap-3">
-              <p className='text-[30px] text-[#175651] tracking-wider mt-5 ml-3 mr-8'>DESCRIÇÃO DA META:</p>
-              <p className='text-[30px] text-[#175651] tracking-wider mt-5 mr-8'>VALOR DA META:</p>
-              <p className='text-[30px] text-[#175651] tracking-wider mt-5'>SELECIONE A DIFICULDADE:</p>
-              <input
-                type="text"
-                value={descricao}
-                placeholder="DESCREVA A META"
-                onChange={(e) => setDescricao(e.target.value)}
-                className="placeholder-[#A0F7EF] text-[25px] w-60 p-3 tracking-wider border-none rounded-[29px] focus:outline-none focus:ring-2 focus:ring-blue-500 text-[#02b4a4]"
-                required
-              />
-              <input
-                type="text"
-                value={valor}
-                placeholder="DIGITE O VALOR"
-                onChange={(e) => setValor(e.target.value)}
-                className="placeholder-[#A0F7EF] text-[25px] w-52 tracking-wider border-none rounded-[29px] p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-[#02b4a4]"
-                required
-              />
-              <select
-                value={dificuldade}
-                onChange={(e) => setDificuldade(e.target.value as 'fácil' | 'média' | 'difícil')}
-                className="text-[25px] text-[#02b4a4] w-[290px] tracking-wider border-none rounded-[29px] p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              >
-                <option value="fácil">Fácil</option>
-                <option value="média">Média</option>
-                <option value="difícil">Difícil</option>
-              </select>
+          <div className="bg-[#B8E8E4] rounded-[30px] p-[1%] leading-none mb-6 shadow-sm">
+            <h2 className='text-[#0E7E75] text-[72px] leading-none'>Adicionar Meta</h2>
+            <div className="flex gap-3 justify-center items-center pt-6">
+              <div>
+                <p className='text-[30px] text-[#175651] tracking-wider'>DESCRIÇÃO DA META:</p>
+                <input
+                  type="text"
+                  value={descricao}
+                  placeholder="DESCREVA A META"
+                  onChange={(e) => setDescricao(e.target.value)}
+                  className="placeholder-[#A0F7EF] text-[25px] w-60 py-0 px-3 tracking-wider border-none rounded-[29px] focus:outline-none focus:ring-2 focus:ring-blue-500 text-[#02b4a4]"
+                  required
+                />
+              </div>
+              <div>
+                <p className='text-[30px] text-[#175651] tracking-wider'>VALOR DA META:</p>
+                <input
+                  type="text"
+                  value={valor}
+                  placeholder="DIGITE O VALOR"
+                  onChange={(e) => setValor(e.target.value)}
+                  className="placeholder-[#A0F7EF] text-[25px] w-52 tracking-wider border-none rounded-[29px] py-0 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500 text-[#02b4a4]"
+                  required
+                />
+              </div>
+              <div>
+                <p className='text-[30px] text-[#175651] tracking-wider'>SELECIONE A DIFICULDADE:</p>
+                <select
+                  value={dificuldade}
+                  onChange={(e) => setDificuldade(e.target.value as 'fácil' | 'média' | 'difícil')}
+                  className="text-[25px] text-[#02b4a4] w-[290px] tracking-wider border-none rounded-[29px] py-0 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+                  <option value="fácil">Fácil</option>
+                  <option value="média">Média</option>
+                  <option value="difícil">Difícil</option>
+                </select>
+              </div>
               <button
                 onClick={adicionarMeta}
-                className="text-[25px] tracking-wider rounded-[29px] bg-[#02b4a4] text-[#175651] pr-8 pl-8 hover:bg-[#175651] hover:text-[#02b4a4] transition"
+                className="text-[25px] tracking-wider rounded-[29px] bg-[#02b4a4] text-[#175651] px-8 py-2 hover:bg-[#175651] hover:text-[#02b4a4] transition"
               >
                 Adicionar Meta
               </button>

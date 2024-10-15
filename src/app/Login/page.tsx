@@ -50,26 +50,26 @@ export default function Login() {
         <Image 
           src="/logo.png" 
           alt="LOGO" 
-          width={423}
-          height={357}
+          width={350}
+          height={300}
         />
-        <h1 className="h1 bebas-neue-regular">LOGIN</h1>
-        <form className="form2 goldman-regular flex flex-col items-center" onSubmit={(e) => {
+        <h1 className="text-center bebas-neue-regular z-10 text-[90px] leading-none pl-[20px] tracking-[20px] text-[#DBFFFC]">LOGIN</h1>
+        <form className="form goldman-regular relative bottom-[80px] flex flex-col items-center bg-[#2C334B] w-[98%] h-auto justify-center rounded-[32px] py-[60px] px-0 mt-[30px] mb-[40px]" onSubmit={(e) => {
           e.preventDefault();
           handleLogin();
         }}>
-          <p className="formsp">EMAIL</p>
+          <p className="text-[35px] text-white leading-[1.1] text-center">EMAIL</p>
           <InputSimples
-            className="inputsCadELog bg-zinc-200 text-zinc-600 ring-1 ring-zinc-400 focus:ring-2 focus:ring-[#6BBEB7] outline-none duration-300 placeholder:text-zinc-600 placeholder:opacity-50 rounded-full px-4 py-1 shadow-md focus:shadow-lg focus:shadow-[#6BBEB7]" 
+            className="mb-[30px] bg-zinc-200 text-zinc-600 ring-1 ring-zinc-400 focus:ring-2 focus:ring-[#6BBEB7] outline-none duration-300 placeholder:text-zinc-600 placeholder:opacity-50 rounded-full px-4 py-1 shadow-md focus:shadow-lg focus:shadow-[#6BBEB7]" 
             placeholder=""
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
         
-          <p className="formsp">SENHA</p>
+          <p className="text-[35px] text-white leading-[1.1] text-center">SENHA</p>
           <InputSimples
-            className="inputsCadELog bg-zinc-200 text-zinc-600 ring-1 ring-zinc-400 focus:ring-2 focus:ring-[#6BBEB7] outline-none duration-300 placeholder:text-zinc-600 placeholder:opacity-50 rounded-full px-4 py-1 shadow-md focus:shadow-lg focus:shadow-[#6BBEB7]" 
+            className="mb-[30px] bg-zinc-200 text-zinc-600 ring-1 ring-zinc-400 focus:ring-2 focus:ring-[#6BBEB7] outline-none duration-300 placeholder:text-zinc-600 placeholder:opacity-50 rounded-full px-4 py-1 shadow-md focus:shadow-lg focus:shadow-[#6BBEB7]" 
             placeholder=""
             type="password"
             value={senha}
@@ -79,7 +79,6 @@ export default function Login() {
           <BotaoInicio
             texto="ENTRAR"
             onClick={() => handleLogin()} 
-            className=""
           />
           
           {mensagemErro && (

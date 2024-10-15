@@ -13,14 +13,14 @@ export default function Tarefas() {
     
     return (
         <div className="bebas-neue-regular min-h-screen flex justify-center bg-[#9ACFCB]">
-            <Topo />
+
             <div className="div-task div-container container mx-auto bg-[#D2EDEB] mt-20 mb-52">
                 <div className='add-tarefa-div'>
                     <p className='bebas-neue-regular add-button shadow-md'>+</p>
-                    <div className="add-tarefas add-tarefas-drop p-6 w-[30%] shadow-md">
+                    <div className="add-tarefas add-tarefas-drop py-6 w-[30%] shadow-md">
                         <h2>Adicionar Tarefa</h2>
                         <div className="flex flex-col items-center flex-wrap gap-3">
-                            <div className='text-center'>
+                            <div className='text-center px-[16%]'>
                                 <p className='text-[30px] text-[#175651] tracking-wider mt-4 '>NOME DA TAREFA:</p>
                                 <input 
                                     type="text"
@@ -31,7 +31,7 @@ export default function Tarefas() {
                                     required
                                 />
                             </div>
-                            <div className='text-center'>
+                            <div className='text-center px-[16%]'>
                                 <p className='text-[30px] text-[#175651] tracking-wider mt-1'>RECOMPENSA DA TAREFA:</p>
                                 <input 
                                     type="text"
@@ -42,7 +42,7 @@ export default function Tarefas() {
                                     required
                                 />
                             </div>
-                            <div className='text-center'>
+                            <div className='text-center px-[16%]'>
                                 <p className='text-[30px] text-[#175651] tracking-wider mt-1'>SELECIONE A DIFICULDADE:</p>
                                 <select
                                     value={novaTarefa.dificuldade}
@@ -70,8 +70,18 @@ export default function Tarefas() {
                     {listaTarefas.map(tarefa => (
                         <div key={tarefa.id} className={`flex justify-between items-center mb-4 p-4 ${tarefa.concluida ? 'bg-[#D4F8F5]' : 'bg-[#B8E8E4]'} rounded-[29px] shadow-md`}>
                             <div className="w-[80%] flex justify-between items-center">
-                                <input type='checkbox' id={`customCheckbox-${tarefa.id}`} className='checkbox' required></input>
-                                <label htmlFor={`customCheckbox-${tarefa.id}`} className='checkboxLabel shadow-md'></label>
+                                <input 
+                                    type='checkbox' 
+                                    id={`customCheckbox-${tarefa.id}`} 
+                                    className='checkbox' 
+                                    required>
+                                </input>
+                                <label 
+                                    htmlFor={`customCheckbox-${tarefa.id}`} 
+                                    onClick={() => alternarConcluida(tarefa.id, listaTarefas, setListaTarefas)}
+                                    className={`checkboxLabel shadow-md ${tarefa.concluida ? 'bg-[#02b402]' : 'bg-[#B8E8E4]'}`}
+                                >
+                                </label>
                                 <div className='flex flex-col'>
                                     <label className='text-[30px] leading-none pt-1 tracking-widest text-[#175651]'>Nome da Tarefa:</label>
                                     <span className={`text-[30px] leading-none pt-3 tracking-wider ${tarefa.concluida ? 'line-through text-[#b2b2b2]' : 'text-[#02b4a4]'}`}>{tarefa.nome}</span>
@@ -85,24 +95,17 @@ export default function Tarefas() {
                                     <span className={`text-[30px] leading-none pt-3 tracking-wider ${tarefa.concluida ? 'line-through text-[#b2b2b2]' : 'text-[#02b4a4]'}`}>{tarefa.dificuldade}</span>
                                 </div>
                             </div>
-                            <div className="flex gap-3">
-                                <button
-                                    onClick={() => alternarConcluida(tarefa.id, listaTarefas, setListaTarefas)}
-                                    className={`text-[30px] tracking-wider rounded-[29px] pr-8 pl-8 transition ${tarefa.concluida ? 'bg-[#02b402] text-[#175651]' : 'bg-[#175651] text-[#02b4a4]'}`}
-                                >
-                                    {tarefa.concluida ? 'Concluída' : 'Concluir'}
-                                </button>
-                                <button
-                                    onClick={() => excluirTarefa(tarefa.id, listaTarefas, setListaTarefas)}
-                                    className="text-[30px] tracking-wider rounded-[29px] bg-[#b40202] text-[#561717] pr-8 pl-8 hover:bg-[#561717] hover:text-[#b40202] transition"
-                                >
-                                    EXCLUIR
-                                </button>
-                            </div>
+                            <button
+                                onClick={() => excluirTarefa(tarefa.id, listaTarefas, setListaTarefas)}
+                                className="text-[30px] tracking-wider rounded-[29px] bg-[#b40202] text-[#561717] pr-8 pl-8 hover:bg-[#561717] hover:text-[#b40202] transition"
+                            >
+                                EXCLUIR
+                            </button>
                         </div>
                     ))}
                 </div>
             </div>
+            <Topo />
         </div>
     );
 
