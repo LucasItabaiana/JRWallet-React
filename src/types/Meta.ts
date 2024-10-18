@@ -1,6 +1,6 @@
 // src/types/Meta.ts
 export interface Meta {
-    id: string;
+    id: number;
     titulo: string;
     recompensa: string;
     dificuldade: 'Fácil' | 'Média' | 'Difícil';
