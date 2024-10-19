@@ -5,8 +5,7 @@ import Link from "next/link";
 export default function Inicio() {
     return(
         <div className='flex flex-col items-center bg-[#175651]'>
-            <div className='h-[135px] w-full'>
-            </div>
+            <div className='h-[135px] w-full'></div>
             <div className='Topo fixed z-10 flex justify-around items-center gap-[30%] w-[99%] h-[95px] bg-[#d2edeb] rounded-[20px] my-[25px]'>
                 <Image 
                     src="/logo.png" 

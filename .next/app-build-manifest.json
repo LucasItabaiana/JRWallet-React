@@ -1,9 +1,9 @@
 {
   "pages": {
-    "/Tarefas/page": [
+    "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/Tarefas/page.js"
+      "static/chunks/app/page.js"
     ],
     "/layout": [
       "static/chunks/webpack.js",
@@ -11,15 +11,30 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/Metas/page": [
+    "/Login/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/Metas/page.js"
+      "static/chunks/app/Login/page.js"
     ],
     "/Perfil/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/Perfil/page.js"
+    ],
+    "/Tarefas/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/Tarefas/page.js"
+    ],
+    "/Metas/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/Metas/page.js"
+    ],
+    "/Carteira/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/Carteira/page.js"
     ]
   }
 }

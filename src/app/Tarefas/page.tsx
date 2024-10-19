@@ -1,16 +1,69 @@
-
 // src/app/Tarefas.tsx
-'use client'
-import { useState } from 'react';
+'use client';
+
+import React, { useState, useEffect } from 'react';
 import Topo from '@/components/Topo/Topo';
-import { adicionarTarefa, excluirTarefa, alternarConcluida } from '../../types/tarefasService';
-import { Tarefa } from '../../types/tarefa'; // Importa a interface Tarefa
+import { db } from "@/firebase/authentication";
+import { collection, addDoc, updateDoc, deleteDoc, doc, onSnapshot } from 'firebase/firestore';
+
+interface Tarefa {
+    id: string;
+    nome: string;
+    recompensa: string;
+    dificuldade: 'Fácil' | 'Média' | 'Difícil';
+    concluida: boolean;
+}
 
 export default function Tarefas() {
     const [listaTarefas, setListaTarefas] = useState<Tarefa[]>([]);
-    const [novaTarefa, setNovaTarefa] = useState<Tarefa>({ nome: '', recompensa: '', dificuldade: 'fácil', concluida: false, id: 0 });
+    const [novaTarefa, setNovaTarefa] = useState<Omit<Tarefa, 'id' | 'concluida'>>({ nome: '', recompensa: '', dificuldade: 'Fácil' });
 
-    
+    // Função para carregar tarefas do Firestore
+    useEffect(() => {
+        const tarefasCollection = collection(db, 'tarefas')
+
+        const unsubscribe = onSnapshot(tarefasCollection, (snapshot) => {
+            const tarefasData: Tarefa[] = snapshot.docs.map(doc => ({
+                id: doc.id,
+                ...doc.data()
+            })) as Tarefa[];
+            setListaTarefas(tarefasData);
+        });
+
+        return () => unsubscribe();
+    }, []);
+
+    const adicionarTarefa = async () => {
+        const tarefasCollection = collection(db, 'tarefas');
+        const tarefaCompletada: Tarefa = {
+            ...novaTarefa,
+            id: '',
+            concluida: false,
+        };
+
+        const docRef = await addDoc(tarefasCollection, tarefaCompletada);
+        setListaTarefas([...listaTarefas, { ...tarefaCompletada, id: docRef.id }]);
+        setNovaTarefa({ nome: '', recompensa: '', dificuldade: 'Fácil' });
+    };
+
+    const alternarConcluida = async (id: string) => {
+        const tarefaRef = doc(db, 'tarefas', id);
+        const tarefa = listaTarefas.find((t) => t.id === id);
+
+        if (tarefa) {
+            await updateDoc(tarefaRef, { concluida: !tarefa.concluida });
+            setListaTarefas(listaTarefas.map((t) =>
+                t.id === id ? { ...t, concluida: !t.concluida } : t
+            ));
+        }
+    };
+
+    const excluirTarefa = async (id: string) => {
+        const tarefaRef = doc(db, 'tarefas', id);
+        await deleteDoc(tarefaRef);
+        setListaTarefas(listaTarefas.filter(tarefa => tarefa.id !== id));
+    };
+
     return (
         <div className="bebas-neue-regular min-h-screen flex justify-center bg-[#9ACFCB]">
 
@@ -46,16 +99,16 @@ export default function Tarefas() {
                                 <p className='text-[30px] text-[#175651] tracking-wider mt-1'>SELECIONE A DIFICULDADE:</p>
                                 <select
                                     value={novaTarefa.dificuldade}
-                                    onChange={(e) => setNovaTarefa({ ...novaTarefa, dificuldade: e.target.value })}
+                                    onChange={(e) => setNovaTarefa({ ...novaTarefa, dificuldade: e.target.value as 'Fácil' | 'Média' | 'Difícil' })}
                                     className="text-[25px] text-[#02b4a4] w-[290px] tracking-wider border-none rounded-[29px] px-3 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
                                 >
-                                    <option value="fácil">Fácil</option>
-                                    <option value="média">Média</option>
-                                    <option value="difícil">Difícil</option>
+                                    <option value="Fácil">Fácil</option>
+                                    <option value="Média">Média</option>
+                                    <option value="Difícil">Difícil</option>
                                 </select>
                             </div>
                             <button
-                                onClick={() => adicionarTarefa(novaTarefa, listaTarefas, setListaTarefas)}
+                                onClick={adicionarTarefa}
                                 className="text-[25px] w-[290px] h-10 tracking-wider rounded-[29px] bg-[#02b4a4] text-[#175651] hover:bg-[#175651] hover:text-[#02b4a4] transition"
                             >
                                 Adicionar Tarefa
@@ -73,12 +126,13 @@ export default function Tarefas() {
                                 <input 
                                     type='checkbox' 
                                     id={`customCheckbox-${tarefa.id}`} 
-                                    className='checkbox' 
-                                    required>
-                                </input>
+                                    checked={tarefa.concluida}
+                                    onChange={() => alternarConcluida(tarefa.id)}
+                                    className='checkbox'
+                                    required
+                                />
                                 <label 
                                     htmlFor={`customCheckbox-${tarefa.id}`} 
-                                    onClick={() => alternarConcluida(tarefa.id, listaTarefas, setListaTarefas)}
                                     className={`checkboxLabel shadow-md ${tarefa.concluida ? 'bg-[#02b402]' : 'bg-[#B8E8E4]'}`}
                                 >
                                 </label>
@@ -96,7 +150,7 @@ export default function Tarefas() {
                                 </div>
                             </div>
                             <button
-                                onClick={() => excluirTarefa(tarefa.id, listaTarefas, setListaTarefas)}
+                                onClick={() => excluirTarefa(tarefa.id)}
                                 className="text-[30px] tracking-wider rounded-[29px] bg-[#b40202] text-[#561717] pr-8 pl-8 hover:bg-[#561717] hover:text-[#b40202] transition"
                             >
                                 EXCLUIR

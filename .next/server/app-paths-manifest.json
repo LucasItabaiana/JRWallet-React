@@ -1,5 +1,7 @@
 {
+  "/Login/page": "app/Login/page.js",
+  "/Perfil/page": "app/Perfil/page.js",
   "/Tarefas/page": "app/Tarefas/page.js",
   "/Metas/page": "app/Metas/page.js",
-  "/Perfil/page": "app/Perfil/page.js"
+  "/Carteira/page": "app/Carteira/page.js"
 }
