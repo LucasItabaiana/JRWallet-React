@@ -1,0 +1,32 @@
+.h1{
+  font-size: 110px;
+  line-height: 1;
+  letter-spacing: 20px;
+  position: absolute;
+  top: 26%;
+  color: #DBFFFC;
+}
+  
+.form{
+  box-shadow: 7px 7px 6px rgba(0, 0, 0, 0.3);
+}
+
+.formErro{
+  font-size: 1.4em;
+  text-align: center;
+  background-color: #4b2c2c;
+  padding: 5px 15px;
+  letter-spacing: 2px;
+  border-radius: 100px;
+  color: rgb(255, 56, 56);
+}
+
+.formSucesso{
+  font-size: 1.4em;
+  text-align: center;
+  background-color: #364b2c;
+  padding: 5px 15px;
+  letter-spacing: 2px;
+  border-radius: 100px;
+  color: rgb(112, 255, 56);
+}

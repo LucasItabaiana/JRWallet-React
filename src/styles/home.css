@@ -1,0 +1,20 @@
+
+.Topo {
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.2);
+}
+  
+.info1 {
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.2);
+}
+
+.text-shadow{
+    text-shadow: 
+        3px 3px 0 #02b4a4,
+        -3px 3px 0 #02b4a4,
+        3px -3px 0 #02b4a4,
+        -3px -3px 0 #02b4a4;
+}
+  
+.info2 {
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.2);
+}
