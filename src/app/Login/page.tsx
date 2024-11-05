@@ -46,30 +46,31 @@ export default function Login() {
 
   return (
     <div>
-      <div className="mx-auto max-w-[500px] flex flex-col items-center">
+      <div className="div-lc flex flex-col items-center">
         <Image 
           src="/logo.png" 
           alt="LOGO" 
           width={350}
           height={300}
+          className="logo-lc"
         />
-        <h1 className="text-center bebas-neue-regular z-10 text-[90px] leading-none pl-[20px] tracking-[20px] text-[#DBFFFC]">LOGIN</h1>
-        <form className="form goldman-regular relative bottom-[80px] flex flex-col items-center bg-[#2C334B] w-[98%] h-auto justify-center rounded-[32px] py-[60px] px-0 mt-[30px] mb-[40px]" onSubmit={(e) => {
+        <h1 className="txt-lc text-center bebas-neue-regular z-10 leading-none text-[#DBFFFC]">LOGIN</h1>
+        <form className="form goldman-regular flex flex-col items-center bg-[#2C334B] justify-center" onSubmit={(e) => {
           e.preventDefault();
           handleLogin();
         }}>
-          <p className="text-[35px] text-white leading-[1.1] text-center">EMAIL</p>
+          <h4 className="text-white text-center">EMAIL</h4>
           <InputSimples
-            className="mb-[30px] bg-zinc-200 text-zinc-600 ring-1 ring-zinc-400 focus:ring-2 focus:ring-[#6BBEB7] outline-none duration-300 placeholder:text-zinc-600 placeholder:opacity-50 rounded-full px-4 py-1 shadow-md focus:shadow-lg focus:shadow-[#6BBEB7]" 
+            className="input-lc mb-[30px] bg-zinc-200 text-zinc-600 ring-1 ring-zinc-400 focus:ring-2 focus:ring-[#6BBEB7] outline-none duration-300 placeholder:text-zinc-600 placeholder:opacity-50 rounded-full px-4 py-1 shadow-md focus:shadow-lg focus:shadow-[#6BBEB7]" 
             placeholder=""
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
         
-          <p className="text-[35px] text-white leading-[1.1] text-center">SENHA</p>
+          <h4 className="text-white text-center">SENHA</h4>
           <InputSimples
-            className="mb-[30px] bg-zinc-200 text-zinc-600 ring-1 ring-zinc-400 focus:ring-2 focus:ring-[#6BBEB7] outline-none duration-300 placeholder:text-zinc-600 placeholder:opacity-50 rounded-full px-4 py-1 shadow-md focus:shadow-lg focus:shadow-[#6BBEB7]" 
+            className="input-lc mb-[30px] bg-zinc-200 text-zinc-600 ring-1 ring-zinc-400 focus:ring-2 focus:ring-[#6BBEB7] outline-none duration-300 placeholder:text-zinc-600 placeholder:opacity-50 rounded-full px-4 py-1 shadow-md focus:shadow-lg focus:shadow-[#6BBEB7]" 
             placeholder=""
             type="password"
             value={senha}
