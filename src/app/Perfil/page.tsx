@@ -8,6 +8,7 @@ import Image from 'next/image';
 import { buscarDadosUsuario, realizarLogout, DadosUsuario } from '../../types/perfilService';
 import { onAuthStateChanged } from "firebase/auth";
 import { auth, db } from "@/firebase/authentication";
+import Link from "next/link";
 
 export default function Perfil() {
   const [dadosUsuario, setDadosUsuario] = useState<DadosUsuario | null>(null);
@@ -116,7 +117,7 @@ export default function Perfil() {
           />
           <button
             type="button"
-            className="py-1 px-5 rounded-full bg-[#175651] hover:bg-[#0f3a36] text-[#02b4a4]"
+            className="py-1 px-5 rounded-full bg-[#175651] box-shadow transition-[2ms] hover:bg-[#0f3a36] text-[#02b4a4]"
           >
             Escolher Arquivo
           </button>
@@ -133,12 +134,19 @@ export default function Perfil() {
           <p>Nenhum dado foi encontrado.</p>
         )}
 
-        <button
-          className="mt-4 py-2 px-6 bg-red-500 text-white rounded-full hover:bg-red-600"
-          onClick={handleLogout}
-        >
-          Sair
-        </button>
+        <div className="flex flex-col justify-center items-center">
+          <Link href={"/Premium"}
+            className="box-shadow w-[200px] text-[20px] mt-4 py-1 px-6 bg-[#02B42E] text-[#B2FFC6] rounded-full transition-[2ms] hover:bg-[#B2FFC6] hover:text-[#02B42E]">
+            ASSINATURA PREMIUM
+          </Link>
+
+          <button
+            className="box-shadow w-[100px] text-[15px] mt-4 py-1 px-6 bg-red-500 text-[white] rounded-full transition-[2ms] hover:bg-red-600"
+            onClick={handleLogout}
+          >
+            Sair
+          </button>
+        </div>
       </div>
     </div>
   );
