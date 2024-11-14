@@ -1,0 +1,67 @@
+.title div{
+    margin-left: 5%;
+    line-height: 1.2;
+    font-size: 150px;
+    letter-spacing: 20px;
+}
+
+.title h2{
+    font-size: 30px;
+    line-height: 1;
+    letter-spacing: 5px;
+}
+
+.dicas{
+    width: 450px; height: 410px;
+    background-color: #e6fffd;
+    border-radius: 40px;
+    padding: 2%;
+    margin: 10px;
+}
+
+.dicas h2{
+    line-height: 1.1;
+    font-size: 3em;
+    padding-bottom: 15px;
+    color: #175651;
+}
+
+.dicas p{
+    line-height: 1.15;
+    text-align: left;
+    font-size: 1.6em;
+    color: #02b4a4;
+}
+
+.dicas-premium{
+    position: relative; /* Garantir que o Link será posicionado relativamente à div */
+    overflow: hidden;
+    filter: brightness(80%);
+}
+
+.dicas-premium h2, .dicas-premium p{
+    filter: blur(3px);
+}
+
+.btn-premium {
+    position: absolute; /* Permite que o Link seja posicionado fora do fluxo normal */
+    top: 50%; /* Posiciona o Link no meio da div verticalmente */
+    left: 50%; /* Posiciona o Link no meio da div horizontalmente */
+    transform: translate(-50%, -50%); /* Ajuste fino para centralizar o Link perfeitamente */
+    z-index: 10; /* Coloca o Link na frente de outros conteúdos */
+    padding: 0px 50px; /* Tamanho do botão */
+    background-color: rgba(0, 92, 84, .7); /* Fundo semitransparente para destaque */
+    color: #02b4a4;
+    text-align: center;
+    line-height: 1.3;
+    letter-spacing: 3px;
+    border-radius: 50px; 
+    text-decoration: none;
+    font-size: 3rem; 
+    transition: .2s;
+}
+
+.btn-premium:hover{
+    color: rgba(0, 92, 84, 1);
+    background-color: rgba(5, 175, 161, 0.7);;
+}

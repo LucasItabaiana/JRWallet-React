@@ -9,6 +9,7 @@
 @import './perfil.css';
 @import './tarefas.css';
 @import './carteira.css';
+@import './dicas.css';
 
 
 .box-shadow{
@@ -52,6 +53,8 @@ body {
   padding: 20px 15px;
   text-align: center;
   border-radius: 30px;
+  margin-top: 80px;
+  margin-bottom: 208px;
   box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.2);
 }
 
@@ -65,4 +68,14 @@ body {
   border-top-right-radius: 30px;
   border-bottom-left-radius: 35px;
   border-bottom-right-radius: 35px;
+}
+
+@media only screen and (max-width: 550px){  
+  .div-container{
+    width: 98%;
+    padding: 20px 10px;
+    margin-top: 20px;
+    margin-bottom: 90px;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+  }
 }

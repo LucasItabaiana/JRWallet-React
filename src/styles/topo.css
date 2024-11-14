@@ -1,3 +1,68 @@
 .divTopo{
+    width: 99%;
+    height: 100px;
+    position: fixed;
+    bottom: 5%;
+    z-index: 1;
     box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.2);
+}
+
+.divTopo svg{
+    width: 60px; 
+    height: 60px;
+}
+
+.linkdicas{
+    position: relative;
+    cursor: pointer;
+}
+
+.dropdicas{
+    position: absolute;
+    font-size: 2.5em;
+    width: 100%;
+    top: 80px;
+    border-radius: 50px;
+    opacity: 0;
+    z-index: -99;
+    visibility: hidden;
+    transition: .5s;
+}
+
+.dropdicas p{
+    line-height: 1.4;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+}
+
+.linkdicas:hover .dropdicas{
+    opacity: 1;
+    visibility: visible;
+    z-index: 99;
+    top: -20%;
+}
+
+@media only screen and (max-width: 550px){
+    .divTopo{
+        height: 50px;
+        position: fixed;
+        bottom: 2.5%;
+    }
+    
+    .divTopo svg{
+        width: 25px; 
+        height: 25px;
+    }
+
+    .logo-top{
+        width: 110px;
+    }
+    
+    .dropdicas{
+        font-size: 2em;
+        top: 30px;
+    }
+    
+    .linkdicas:hover .dropdicas{
+        top: -30%;
+    }
 }

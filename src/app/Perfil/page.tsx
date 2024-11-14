@@ -1,4 +1,3 @@
-// src/app/Perfil.tsx
 'use client';
 
 import { useState, useEffect } from "react";
@@ -94,34 +93,34 @@ export default function Perfil() {
   }
 
   return (
-    <div className="bebas-neue-regular min-h-screen flex justify-center items-center bg-[#9ACFCB]">
+    <div className="bebas-neue-regular w-full min-h-screen flex justify-center items-center bg-[#9ACFCB]">
       <Topo />
-      <div className="div-container container mx-auto bg-[#D2EDEB] mt-20 mb-52 text-[#175651]">
-        {imagemSelecionada && (
-          <div className="profile-pic flex justify-center py-3">
-            <Image 
-              src={imagemSelecionada} 
-              alt="Foto de Perfil"
-              width={200} 
-              height={200}
-              className="border-[10px] border-[#9ACFCB] rounded-full py-1 px-1"
-            />
-          </div>
-        )}
-        <div className="relative w-full flex justify-center text-[25px]">
+      <div className="div-container container mx-auto bg-[#D2EDEB] text-[#175651]">
+        <div className="flex justify-center pb-3">
+          <Image 
+            src={imagemSelecionada || '/avatar.png'}
+            alt="Foto de Perfil"
+            width={200} 
+            height={200}
+            className="profile-pic object-cover border-[#9ACFCB] rounded-full py-1 px-1"
+          />
+        </div>
+
+        <div className="div-image relative w-full flex justify-center">
           <input
             type="file"
             accept="image/*"
             onChange={selecionarImagem}
-            className="absolute cursor-pointer opacity-0 z-10 pr-60" 
+            className="absolute cursor-pointer opacity-0 z-10" 
           />
           <button
             type="button"
-            className="py-1 px-5 rounded-full bg-[#175651] box-shadow transition-[2ms] hover:bg-[#0f3a36] text-[#02b4a4]"
+            className="rounded-full bg-[#175651] box-shadow transition-[2ms] hover:bg-[#0f3a36] text-[#02b4a4]"
           >
             Escolher Arquivo
           </button>
         </div>
+
         {dadosUsuario ? (
           <div className="info-profile">
             <h1>{dadosUsuario.nome}</h1>
@@ -136,12 +135,12 @@ export default function Perfil() {
 
         <div className="flex flex-col justify-center items-center">
           <Link href={"/Premium"}
-            className="box-shadow w-[200px] text-[20px] mt-4 py-1 px-6 bg-[#02B42E] text-[#B2FFC6] rounded-full transition-[2ms] hover:bg-[#B2FFC6] hover:text-[#02B42E]">
+            className="btn-premium-profile box-shadow bg-[#02B42E] text-[#B2FFC6] rounded-full transition-[2ms] hover:bg-[#B2FFC6] hover:text-[#02B42E]">
             ASSINATURA PREMIUM
           </Link>
 
           <button
-            className="box-shadow w-[100px] text-[15px] mt-4 py-1 px-6 bg-red-500 text-[white] rounded-full transition-[2ms] hover:bg-red-600"
+            className="btn-logout box-shadow bg-red-500 text-[white] rounded-full transition-[2ms] hover:bg-red-600"
             onClick={handleLogout}
           >
             Sair

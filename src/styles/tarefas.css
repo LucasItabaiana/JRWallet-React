@@ -64,8 +64,7 @@
 
 .add-tarefas-drop{
     position: absolute;
-    top: 18vh;
-    right: 15%;
+    text-align: center;
     opacity: 0;
     z-index: -99;
     visibility: hidden;
