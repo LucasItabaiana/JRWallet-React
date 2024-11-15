@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import './cadastroelogin.css';
+@import './premium.css';
 @import './metas.css';
 @import './home.css';
 @import './topo.css';
@@ -50,6 +51,7 @@ body {
 }
 
 .div-container{
+  width: 99%;
   padding: 20px 15px;
   text-align: center;
   border-radius: 30px;
@@ -58,24 +60,12 @@ body {
   box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.2);
 }
 
-.div-premium{
-  border-top-left-radius: 30px;
-  border-bottom-left-radius: 35px;
-  border-bottom-right-radius: 35px;
-}
-
-.div-premium2{
-  border-top-right-radius: 30px;
-  border-bottom-left-radius: 35px;
-  border-bottom-right-radius: 35px;
-}
-
 @media only screen and (max-width: 550px){  
   .div-container{
     width: 98%;
     padding: 20px 10px;
-    margin-top: 20px;
-    margin-bottom: 90px;
+    margin-top: 10px;
+    margin-bottom: 70px;
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
   }
 }

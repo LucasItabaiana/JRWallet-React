@@ -61,14 +61,14 @@ export default function Carteira() {
     return (
         <div className="bebas-neue-regular min-h-screen flex justify-center items-center bg-[#9ACFCB]">
             <Topo />
-            <div className="div-container flex flex-col align-center justify-center h-[600px] container mx-auto bg-[#D2EDEB] mt-20 mb-52">
-                <h1 className="text-[110px] tracking-[45px] text-[#02b4a4] text-center">
-                    SALDO: {saldo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
+            <div className="container-carteira div-container flex flex-col align-center justify-center container mx-auto bg-[#D2EDEB]">
+                <h1 className="text-[#02b4a4] text-center">
+                    SALDO: <br /> {saldo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
                 </h1>
                 <div className="tarefas-input flex justify-center items-center">
                     <button 
                         onClick={() => adicionarValor('entrada')}
-                        className="px-[40px] text-[30px] text-[#02b4a4] hover:text-[#175651]"
+                        className="add-valor"
                     >
                         +
                     </button>
@@ -77,43 +77,45 @@ export default function Carteira() {
                         value={novoValor}
                         onChange={(e) => setNovoValor(e.target.value)}
                         placeholder="DIGITE UM VALOR..."
-                        className="text-[25px] w-[290px] px-3 py-1 tracking-wider border-none rounded-[29px] focus:outline-none"
+                        className="border-none focus:outline-none"
                     />
                     <button 
                         onClick={() => adicionarValor('saida')}
-                        className="px-[45px] text-[30px] text-[#b40202] hover:text-[#561717]"
+                        className="remove-valor"
                     >
                         -
                     </button>
                 </div>
 
-                {/* Histórico de Transações */}
-                <div className="mt-8 px-4 overflow-y-auto max-h-[300px]">
-                    <h2 className="text-[30px] text-[#175651] mb-4">HISTÓRICO DE TRANSAÇÕES</h2>
+                    {/* Histórico de Transações */}
+                <div className="div-historico">
+                    <h2 className="text-[#175651]">HISTÓRICO DE TRANSAÇÕES</h2>
+                    <div className='div-dados-hist rounded-[30px]'>
                     {transacoes.map((transacao) => (
-                        <div 
-                            key={transacao.id}
-                            className={`flex justify-between items-center p-4 mb-2 rounded-[29px] ${
-                                transacao.tipo === 'entrada' ? 'bg-[#B8E8E4]' : 'bg-[#FFD1D1]'
-                            }`}
-                        >
-                            <div>
-                                <p className="text-[20px] text-[#175651]">{transacao.descricao}</p>
-                                <p className="text-[16px] text-[#555]">
-                                    {transacao.dataCriacao.toLocaleDateString('pt-BR')}
+                            <div 
+                                key={transacao.id}
+                                className={`py-4 px-8 mb-3 flex justify-between items-center rounded-[40px] ${
+                                    transacao.tipo === 'entrada' ? 'bg-[#B8E8E4]' : 'bg-[#FFD1D1]'
+                                }`}
+                            >
+                                <div>
+                                    <p className="txt-hist1 text-[#175651]">{transacao.descricao}</p>
+                                    <p className="txt-hist2 text-[#555]">
+                                        {transacao.dataCriacao.toLocaleDateString('pt-BR')}
+                                    </p>
+                                </div>
+                                <p className={`txt-hist1 ${
+                                    transacao.tipo === 'entrada' ? 'text-[#02b4a4]' : 'text-[#b40202]'
+                                }`}>
+                                    {transacao.tipo === 'entrada' ? '+' : '-'}
+                                    {transacao.valor.toLocaleString('pt-BR', { 
+                                        style: 'currency', 
+                                        currency: 'BRL' 
+                                    })}
                                 </p>
                             </div>
-                            <p className={`text-[25px] ${
-                                transacao.tipo === 'entrada' ? 'text-[#02b4a4]' : 'text-[#b40202]'
-                            }`}>
-                                {transacao.tipo === 'entrada' ? '+' : '-'}
-                                {transacao.valor.toLocaleString('pt-BR', { 
-                                    style: 'currency', 
-                                    currency: 'BRL' 
-                                })}
-                            </p>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>

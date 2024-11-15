@@ -1,1 +1,134 @@
+.h1-metas{
+    font-size: 120px;
+    line-height: 1.2;
+    letter-spacing: 20px;
+}
 
+.div-add-meta{
+    padding: 1%;
+    margin-bottom: 24px;
+}
+
+.div-add-meta h2{
+    font-size: 72px;
+}
+
+.div-add-meta > div{
+    gap: 12px;
+    padding-top: 24px;
+}
+
+.div-add-meta p{
+    font-size: 30px;
+    letter-spacing: .05em;
+}
+
+.div-add-meta input{
+    width: 240px;
+    padding: 10px 12px;
+    font-size: 25px;
+    letter-spacing: .05em;
+}
+
+.div-add-meta select{
+    font-size: 25px;
+    width: 290px;
+    letter-spacing: .05em;
+    padding: 10px 12px;
+}
+
+.div-add-meta button{
+    font-size: 25px;
+    letter-spacing: .05em;    
+    padding: 8px 32px;
+    margin: 1%;
+}
+
+.ul-metas li{
+    margin-bottom: 16px;
+    padding: 16px;
+}
+
+.ul-metas strong{
+    font-size: 30px;
+    letter-spacing: 0.1em;
+}
+
+.ul-metas p, .ul-metas button{
+    font-size: 30px;
+    letter-spacing: 0.05em;
+}
+
+.ul-metas button{
+    padding: 4px 32px;
+}
+
+.div-btn-metas{
+    gap: 8px;
+}
+
+@media only screen and (max-width: 550px){  
+    .h1-metas{
+        font-size: 70px;
+        letter-spacing: 10px;
+    }
+    
+    .div-add-meta{
+        padding: 1%;
+        margin-bottom: 15px;
+    }
+    
+    .div-add-meta h2{
+        font-size: 40px;
+        padding-top: 10px;
+    }
+    
+    .div-add-meta > div{
+        flex-direction: column;
+        padding-top: 10px;
+    }
+    
+    .div-add-meta p{
+        font-size: 15px;
+    }
+    
+    .div-add-meta input{
+        width: 150px;
+        padding: 5px 8px;
+        font-size: 12px;
+    }
+    
+    .div-add-meta select{
+        font-size: 12px;
+        width: 150px;
+        padding: 5px 8px;
+    }
+    
+    .div-add-meta button{
+        font-size: 17px;   
+        padding: 5px 25px;
+        margin: 0% 0% 5% 0%;
+    }
+
+    .div-btn-metas{
+        gap: 4px;
+        flex-direction: column;
+    }
+
+    .ul-metas li{
+        margin-bottom: 10px;
+        padding: 12px;
+    }
+    
+    .ul-metas strong{
+        font-size: 15px;
+    }
+    
+    .ul-metas p, .ul-metas button{
+        font-size: 15px;
+    }
+    
+    .ul-metas button{
+        padding: 1px 12px;
+    }
+}

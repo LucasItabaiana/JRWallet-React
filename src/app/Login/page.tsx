@@ -61,7 +61,7 @@ export default function Login() {
         }}>
           <h4 className="text-white text-center">EMAIL</h4>
           <InputSimples
-            className="input-lc mb-[30px] bg-zinc-200 text-zinc-600 ring-1 ring-zinc-400 focus:ring-2 focus:ring-[#6BBEB7] outline-none duration-300 placeholder:text-zinc-600 placeholder:opacity-50 rounded-full px-4 py-1 shadow-md focus:shadow-lg focus:shadow-[#6BBEB7]" 
+            className="input-lc bg-zinc-200 text-zinc-600 ring-1 ring-zinc-400 focus:ring-2 focus:ring-[#6BBEB7] outline-none duration-300 placeholder:text-zinc-600 placeholder:opacity-50 rounded-full shadow-md focus:shadow-lg focus:shadow-[#6BBEB7]" 
             placeholder=""
             type="email"
             value={email}
@@ -70,7 +70,7 @@ export default function Login() {
         
           <h4 className="text-white text-center">SENHA</h4>
           <InputSimples
-            className="input-lc mb-[30px] bg-zinc-200 text-zinc-600 ring-1 ring-zinc-400 focus:ring-2 focus:ring-[#6BBEB7] outline-none duration-300 placeholder:text-zinc-600 placeholder:opacity-50 rounded-full px-4 py-1 shadow-md focus:shadow-lg focus:shadow-[#6BBEB7]" 
+            className="input-lc bg-zinc-200 text-zinc-600 ring-1 ring-zinc-400 focus:ring-2 focus:ring-[#6BBEB7] outline-none duration-300 placeholder:text-zinc-600 placeholder:opacity-50 rounded-full shadow-md focus:shadow-lg focus:shadow-[#6BBEB7]" 
             placeholder=""
             type="password"
             value={senha}
@@ -97,7 +97,7 @@ export default function Login() {
           <button 
             type="button" 
             onClick={handleResetPassword} 
-            className="mt-2 text-[.9em] leading-none text-gray-500 duration-100 hover:border-b-2 border-gray-500">
+            className="mt-5 text-[.9em] leading-none text-gray-500 duration-100 hover:border-b-2 border-gray-500">
             ESQUECEU A SENHA? / CLIQUE AQUI
           </button>
           

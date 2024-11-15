@@ -21,9 +21,14 @@
   box-shadow: 7px 7px 6px rgba(0, 0, 0, 0.3);
 }
 
-.form h4{
+.form h4, .form p{
   font-size: 35px;
   line-height: 1.1;
+}
+
+.input-lc{
+  margin-bottom: 30px;
+  padding: 4px 16px;
 }
 
 .h1{
@@ -75,9 +80,8 @@
     margin-bottom: 0px;
   }
   
-  .form h4{
-    font-size: 20px;
-    line-height: 1.1;
+  .form h4, .form p{
+    font-size: 22px;
   }
   
   .h1{

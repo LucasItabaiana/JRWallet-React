@@ -1,0 +1,109 @@
+.div-premium-total{
+    display: flex;
+    gap: 2%;
+}
+
+.div-premium{
+    width: 40%;
+    padding-top: 48px;
+    margin-bottom: 100px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+}
+
+.div-premium2{
+    width: 40%;
+    padding-top: 48px;
+    margin-bottom: 100px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+}
+
+.div-premium h1, .div-premium2 h1{
+    font-size: 7rem;
+}
+
+.div-premium p, .div-premium2 p{
+    font-size: 2.5rem;
+}
+
+.div-premium ul, .div-premium2 ul{
+    margin-top: 20px;
+}
+
+.div-premium li, .div-premium2 li{
+    font-size: 2rem;
+}
+
+.div-premium button, .div-premium2 button{
+    font-size: 6rem;
+}
+
+.div-premium button{
+    margin-top: 12.3rem;
+}
+
+.div-premium2 button{
+    margin-top: 1.55em;
+}
+
+
+@media only screen and (max-width: 550px){  
+    .seta{
+        width: 50px;
+    }
+
+    .div-premium-total{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .div-premium{
+        width: 90%;
+        padding-top: 48px;
+        margin-bottom: 0px;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+      
+    .div-premium2{
+        width: 90%;
+        padding-top: 48px;
+        margin-top: 10px;
+        margin-bottom: 30px;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+
+    .done{
+        width: 15px;
+    }
+    
+    .div-premium h1, .div-premium2 h1{
+        font-size: 4.5rem;
+    }
+    
+    .div-premium p, .div-premium2 p{
+        font-size: 2rem;
+    }
+    
+    .div-premium ul, .div-premium2 ul{
+        margin-top: 20px;
+    }
+    
+    .div-premium li, .div-premium2 li{
+        font-size: 1.1rem;
+    }
+    
+    .div-premium button, .div-premium2 button{
+        font-size: 3.5rem;
+        margin-top: 8rem;
+    }
+}

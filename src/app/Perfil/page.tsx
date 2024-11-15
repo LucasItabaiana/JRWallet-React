@@ -64,7 +64,7 @@ export default function Perfil() {
       <div className="bebas-neue-regular min-h-screen flex justify-center items-center bg-[#9ACFCB]">
         <Topo />
         <div className="div-container container mx-auto bg-[#D2EDEB] mt-20 mb-52 text-center">
-          <p className="text-[5em] text-[#175651]">Carregando...</p>
+          <p className="p-message text-[#175651]">Carregando...</p>
         </div>
       </div>
     );
@@ -75,7 +75,7 @@ export default function Perfil() {
       <div className="bebas-neue-regular min-h-screen flex justify-center items-center bg-[#9ACFCB]">
         <Topo />
         <div className="div-container container mx-auto bg-[#D2EDEB] mt-20 mb-52 text-center">
-          <p className="text-[5em] text-[#561717]">Usuário não está autenticado.</p>
+          <p className="p-message text-[#561717]">Usuário não está autenticado.</p>
         </div>
       </div>
     );
@@ -86,7 +86,7 @@ export default function Perfil() {
       <div className="bebas-neue-regular min-h-screen flex justify-center items-center bg-[#9ACFCB]">
         <Topo />
         <div className="div-container container mx-auto bg-[#D2EDEB] mt-20 mb-52 text-center">
-          <p className="text-[5em] text-[#561717]">{mensagemErro}</p>
+          <p className="p-message text-[#561717]">{mensagemErro}</p>
         </div>
       </div>
     );

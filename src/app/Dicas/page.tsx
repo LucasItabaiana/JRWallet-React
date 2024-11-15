@@ -9,19 +9,20 @@ export default function Dicas() {
             <Topo />
             <div className="div-container text-center container mx-auto bg-[#D2EDEB] mt-20 mb-52">
             <div className="title w-full flex flex-col justify-center items-center">
-            <div className="flex leading-[1.2] text-[#02b4a4]">
+            <div className="flex text-[#02b4a4]">
                 <h1>DICAS</h1>
                 <Image 
                     src="/logo.png" 
                     alt="LOGO"       
                     width={300}
                     height={200}
+                    className="logo-dicas"
                 />
             </div>
             <h2 className="text-[#175651]">PARA OS PEQUENOS LIDAREM COM O DINDIN</h2>
             </div>
 
-            <section className="flex flex-wrap p-[3%]">
+            <section className="dicas-sec flex flex-wrap">
                 <div className="dicas box-shadow">
                     <h2>O Dinheiro e Você: <br /> Seu Superpoder!</h2>
                     <p>Sabia que o dinheiro é como um superpoder? Ele
