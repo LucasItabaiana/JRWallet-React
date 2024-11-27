@@ -1,4 +1,4 @@
-// src/types/Tarefa.ts
+
 export interface Tarefa {
     id: number;
     nome: string;

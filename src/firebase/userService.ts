@@ -1,6 +1,6 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
-import { auth, db } from "./authentication"; // Certifique-se de que está importando db corretamente
+import { auth, db } from "./authentication"; 
 
 // Função para salvar dados do usuário no Firestore
 export const cadastrarUsuario = async (

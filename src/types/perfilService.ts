@@ -1,9 +1,8 @@
-// src/services/userService.ts
+
 import { doc, getDoc } from "firebase/firestore";
 import { auth } from "@/firebase/authentication";
 import { signOut } from "firebase/auth";
-import { db } from "@/firebase/authentication"; // Certifique-se de que o db está importado corretamente
-
+import { db } from "@/firebase/authentication"; 
 export interface DadosUsuario {
   nome: string;
   email: string;

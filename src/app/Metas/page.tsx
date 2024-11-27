@@ -27,7 +27,7 @@ const Metas: React.FC = () => {
     const [novaDificuldade, setNovaDificuldade] = useState<'Fácil' | 'Média' | 'Difícil'>('Fácil');
     const auth = getAuth();
 
-    // Função para carregar metas do usuário atual do Firestore
+   
     useEffect(() => {
         const currentUser = auth.currentUser;
         if (!currentUser) return;
@@ -124,7 +124,7 @@ const Metas: React.FC = () => {
         }
     };
 
-    // Rest of your component's JSX remains the same
+    
     return (
       <div className="bebas-neue-regular min-h-screen flex justify-center items-center bg-[#9ACFCB]">
       <Topo />

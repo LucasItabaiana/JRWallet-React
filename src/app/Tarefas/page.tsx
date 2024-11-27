@@ -29,7 +29,7 @@ export default function Tarefas() {
         if (!currentUser) return;
 
         const inicializar = async () => {
-            // Inicializa a carteira ao carregar o componente
+           
             try {
                 await inicializarCarteira();
             } catch (error) {

@@ -1,12 +1,10 @@
-'use client'; 
+'use client';
 
-import { auth, db } from '../../firebase/authentication'; 
-import Link from "next/link";
+import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
-import { useRouter } from 'next/navigation'; 
-import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { setDoc, doc } from 'firebase/firestore';
+import { useRouter } from 'next/navigation';
+import { cadastrarUsuario } from '../../types/AuthService';
 import BotaoInicio from "@/components/Botoes/botaoInicio";
 import InputSimples from "@/components/Input/input";
 
@@ -19,38 +17,20 @@ export default function Cadastro() {
   const [estado, setEstado] = useState('');
   const [mensagemSucesso, setMensagemSucesso] = useState('');
   const [mensagemErro, setMensagemErro] = useState('');
-  const router = useRouter(); 
+  const router = useRouter();
 
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    try {
-      
-      const userCredential = await createUserWithEmailAndPassword(auth, email, senha);
-      const user = userCredential.user;
-      console.log('Usuário criado:', user);
+    const dados = { nome, email, dataNascimento, biografia, estado };
+    const resultado = await cadastrarUsuario(email, senha, dados);
 
-      
-      await setDoc(doc(db, 'usuarios', user.uid), {
-        nome,
-        email,
-        dataNascimento,
-        biografia,
-        estado
-      });
-
-      setMensagemSucesso('Usuário cadastrado com sucesso! Aguarde...');
+    if (resultado.sucesso) {
+      setMensagemSucesso(resultado.mensagem);
       setMensagemErro('');
-
-      router.push('/Login');
-    } catch (error) {
-      if (error instanceof Error) {
-        console.error('Erro ao cadastrar:', error.message);
-        setMensagemErro('Erro ao cadastrar o usuário: ' + error.message);
-      } else {
-        console.error('Erro desconhecido:', error);
-        setMensagemErro('Erro desconhecido.');
-      }
+      setTimeout(() => router.push('/Login'), 2000); 
+    } else {
+      setMensagemErro(resultado.mensagem);
       setMensagemSucesso('');
     }
   };

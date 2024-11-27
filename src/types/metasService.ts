@@ -1,4 +1,4 @@
-import { Meta } from './Meta'; // Certifique-se de que o caminho está correto
+import { Meta } from './Meta'; 
 
 // Função para adicionar uma nova meta
 export const adicionarMeta = (
@@ -25,7 +25,7 @@ export const excluirMeta = (
 
 // Função para alternar a dificuldade de uma meta
 export const alternarDificuldade = (
-    id: number, // `id` é um número
+    id: number, 
     listaMetas: Meta[],
     setMetas: React.Dispatch<React.SetStateAction<Meta[]>>
 ) => {
